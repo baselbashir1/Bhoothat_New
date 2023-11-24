@@ -335,7 +335,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="mr-4 ml-4">
         <div class="row">
             <h4 class="text-center mt-4 mb-4"><b>Samples</b></h4>
             @for ($i = 1; $i <= 4; $i++)
