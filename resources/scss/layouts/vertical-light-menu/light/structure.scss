@@ -120,7 +120,7 @@ code {
 #content {
   width: 50%;
   flex-grow: 8;
-  margin-top: 70px;
+  margin-top: 60px;
   margin-bottom: 0;
 //   margin-left: 255px;
   -webkit-transition: 0.3s ease all;
@@ -246,8 +246,8 @@ code {
   -webkit-transition: 0.3s left, 0s padding;
   transition: 0.3s left, 0s padding;
   backdrop-filter: blur(31px);
-  padding: 20px 20px 11px 16px;
-  min-height: 70px;
+  padding: 11px 20px 11px 16px;
+  min-height: 62px;
 //   width: calc(100% - 255px - 48px);
 //   border-radius: 8px;
   -webkit-box-shadow: 0 6px 10px 0 rgba(255, 255, 255, 0.14), 0 1px 18px 0 rgba(255, 255, 255, 0.12), 0 3px 5px -1px rgba(255, 255, 255, 0.2);
@@ -1616,8 +1616,8 @@ body {
     padding-right: 16px;
     padding-left: 16px;
     left: 0;
-    left: 16px;
-    width: calc(100% - 32px);
+    left: 0;
+    width: 100%;
 
     &.container-xxl {
       left: 0;

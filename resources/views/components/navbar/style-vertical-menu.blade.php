@@ -1,7 +1,31 @@
+<style>
+    @media (max-width: 991px) {
+        .theme-logo-new {
+            display: none;
+        }
+
+        .theme-auth-new {
+            display: none;
+        }
+
+        .them-text-new {
+            display: none;
+        }
+
+        .theme-lang-new {
+            display: none;
+        }
+
+        .theme-mode-new {
+            display: none;
+        }
+    }
+</style>
+
 <div class="header-container" style="box-shadow: 0 2px 4px 6px rgba(0, 0, 0, 0.1);">
     <header class="header navbar navbar-expand-sm expand-header">
 
-        <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom">
+        <a href="javascript:void(0);" class="sidebarCollapse m-2" data-placement="bottom">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 class="feather feather-menu">
@@ -14,8 +38,8 @@
         <ul class="navbar-item theme-brand flex-row text-center">
             <li class="nav-item theme-logo theme-logo-new">
                 <a href="/">
-                    <img src="{{ Vite::asset('public/src/assets/img/logo-new.png') }}" class="navbar-logo"
-                        alt="logo">
+                    <img src="{{ Vite::asset('resources/images/logo-new.png') }}" class="navbar-logo" alt="LOGO"
+                        style="width: 55px; height: 55px">
                     {{-- <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-world-search"
                         width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
                         fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -30,7 +54,7 @@
                     </svg> --}}
                 </a>
             </li>
-            <li class="nav-item theme-text">
+            <li class="nav-item theme-text them-text-new">
                 <a href="/" class="nav-link"> Bhoothat </a>
             </li>
         </ul>

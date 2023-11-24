@@ -335,7 +335,7 @@
             @for ($i = 1; $i <= 4; $i++)
                 <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-4">
                     <a href="./app-blog-post.html" class="card style-2 mb-md-0 mb-4">
-                        <img src="{{ Vite::asset('public/src/assets/img/pdf-to-word.png') }}" class="card-img-top"
+                        <img src="{{ Vite::asset('resources/images/p2w.png') }}" class="card-img-top"
                             alt="...">
                         <div class="card-body px-0 pb-0 text-center">
                             <h5 class="card-title mb-3 font-bg">Convert PDF files to Word.</h5>
