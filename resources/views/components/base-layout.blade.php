@@ -24,8 +24,6 @@
     @vite(['resources/scss/layouts/vertical-light-menu/dark/loader.scss'])
     @vite(['resources/scss/light/assets/components/carousel.scss'])
     @vite(['resources/scss/dark/assets/components/carousel.scss'])
-    @vite(['resources/scss/light/assets/components/modal.scss'])
-    @vite(['resources/scss/dark/assets/components/modal.scss'])
     @vite(['resources/scss/light/assets/apps/blog-create.scss'])
     @vite(['resources/scss/dark/assets/apps/blog-create.scss'])
     @vite(['resources/scss/light/assets/apps/blog-post.scss'])
@@ -52,20 +50,14 @@
     @vite(['public/plugins/tagify/tagify.css'])
     @vite(['public/plugins/filepond/filepond.min.css'])
     @vite(['public/plugins/filepond/FilePondPluginImagePreview.min.css'])
-
-
     @vite(['resources/scss/layouts/vertical-light-menu/light/structure.scss'])
     @vite(['resources/scss/layouts/vertical-light-menu/dark/structure.scss'])
-
     @vite(['resources/scss/light/plugins/plugins.min.scss'])
     @vite(['resources/scss/dark/plugins/plugins.min.scss'])
-
-    {{--
-    @vite(['public/layouts/horizontal-dark-menu/css/light/plugins.css'])
-    @vite(['public/layouts/horizontal-dark-menu/css/dark/plugins.css'])
-    --}}
-
     @vite(['resources/layouts/vertical-light-menu/loader.js'])
+
+    {{-- @vite(['public/layouts/horizontal-dark-menu/css/light/plugins.css'])
+    @vite(['public/layouts/horizontal-dark-menu/css/dark/plugins.css']) --}}
 
     <style>
         /* .scrollbar {
@@ -113,7 +105,7 @@
     @endif --}}
 
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/bootstrap/bootstrap.min.css') }}">
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('plugins/bootstrap/bootstrap.min.css') }}"> --}}
     @vite(['resources/scss/light/assets/main.scss', 'resources/scss/dark/assets/main.scss'])
 
     @if (
@@ -129,8 +121,11 @@
         @if ($scrollspy == 1)
             @vite(['resources/scss/light/assets/scrollspyNav.scss', 'resources/scss/dark/assets/scrollspyNav.scss'])
         @endif
-        <link rel="stylesheet" type="text/css" href="{{ asset('plugins/waves/waves.min.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('plugins/highlight/styles/monokai-sublime.css') }}">
+        {{-- <link rel="stylesheet" type="text/css" href="{{ asset('plugins/waves/waves.min.css') }}"> --}}
+        @vite(['public/plugins/waves/waves.min.css'])
+        {{-- <link rel="stylesheet" type="text/css" href="{{ asset('plugins/highlight/styles/monokai-sublime.css') }}"> --}}
+        {{-- public\plugins\highlight\styles\monokai-sublime.css --}}
+        @vite(['public/plugins/highlight/styles/monokai-sublime.css'])
         @vite(['resources/scss/light/plugins/perfect-scrollbar/perfect-scrollbar.scss', 'resources/scss/layouts/vertical-light-menu/light/structure.scss', 'resources/scss/layouts/vertical-light-menu/dark/structure.scss'])
 
     @endif
@@ -184,7 +179,7 @@
     {{-- @auth --}}
     {{-- @if (!Request::routeIs('blank')) --}}
     <!--  BEGIN NAVBAR  -->
-    <x-navbar.style-vertical-menu classes="{{ $isBoxed ? 'container-xxl' : '' }}" />
+    <x-navbar.style-vertical-menu classes="" />
     <!--  END NAVBAR  -->
     {{-- @endif --}}
     {{-- @endauth --}}
@@ -214,18 +209,18 @@
             </div>
 
             {{-- @if ($scrollspy == 1)
+                <div class="container">
                     <div class="container">
-                        <div class="container">
-                            {{ $slot }}
-                        </div>
+                        {{ $slot }}
                     </div>
-                @else
-                    <div class="layout-px-spacing">
-                        <div class="middle-content {{ $isBoxed ? 'container-xxl' : '' }} p-0">
-                            {{ $slot }}
-                        </div>
+                </div>
+            @else
+                <div class="layout-px-spacing">
+                    <div class="middle-content {{ $isBoxed ? 'container-xxl' : '' }} p-0">
+                        {{ $slot }}
                     </div>
-                @endif --}}
+                </div>
+            @endif --}}
 
             <!--  BEGIN FOOTER  -->
             <x-layout-footer />
@@ -249,12 +244,12 @@
     !Request::routeIs('2Step') &&
     // Real Logins
     !Request::routeIs('login')) --}}
-    <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <script src="{{ asset('plugins/bootstrap/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
-    <script src="{{ asset('plugins/mousetrap/mousetrap.min.js') }}"></script>
-    <script src="{{ asset('plugins/waves/waves.min.js') }}"></script>
-    <script src="{{ asset('plugins/highlight/highlight.pack.js') }}"></script>
+
+    @vite(['public/plugins/bootstrap/bootstrap.bundle.min.js'])
+    @vite(['public/plugins/perfect-scrollbar/perfect-scrollbar.min.js'])
+    @vite(['public/plugins/mousetrap/mousetrap.min.js'])
+    @vite(['public/plugins/waves/waves.min.js'])
+    @vite(['public/plugins/highlight/highlight.pack.js'])
 
     <!-- jQuery CDN -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -271,7 +266,8 @@
     {{-- @if (Request::is('modern-light-menu/*'))
             @vite(['resources/layouts/vertical-light-menu/app.js'])
         @elseif (Request::is('modern-dark-menu/*')) --}}
-    @vite(['resources/layouts/vertical-dark-menu/app.js'])
+    @vite(['resources/layouts/vertical-light-menu/app.js'])
+    {{-- @vite(['resources/layouts/vertical-dark-menu/app.js']) --}}
     {{-- @elseif (Request::is('collapsible-menu/*'))
             @vite(['resources/layouts/collapsible-menu/app.js'])
         @endif --}}
@@ -297,7 +293,6 @@
     @vite(['public/plugins/tagify/tagify.min.js'])
     @vite(['public/plugins/highlight/highlight.pack.js'])
     @vite(['public/plugins/editors/quill/quill.js'])
-    {{-- @vite(['resources/layouts/vertical-light-menu/app.js']) --}}
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
     {{ $footerFiles }}

@@ -2,31 +2,26 @@
 
     <x-slot:pageTitle>Bhoothat</x-slot>
 
-    <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <x-slot:headerFiles>
 
+        @vite(['resources/scss/light/assets/components/modal.scss'])
+        @vite(['resources/scss/dark/assets/components/modal.scss'])
         @vite(['public/plugins/filepond/filepond.min.css'])
         @vite(['public/plugins/filepond/FilePondPluginImagePreview.min.css'])
         @vite(['public/plugins/tagify/tagify.css'])
-
         @vite(['resources/scss/light/assets/forms/switches.scss'])
         @vite(['resources/scss/light/plugins/editors/quill/quill.snow.scss'])
         @vite(['resources/scss/light/plugins/tagify/custom-tagify.scss'])
         @vite(['resources/scss/light/plugins/filepond/custom-filepond.scss'])
-
         @vite(['resources/scss/dark/assets/forms/switches.scss'])
         @vite(['resources/scss/dark/plugins/editors/quill/quill.snow.scss'])
         @vite(['resources/scss/dark/plugins/tagify/custom-tagify.scss'])
         @vite(['resources/scss/dark/plugins/filepond/custom-filepond.scss'])
-
         @vite(['resources/scss/light/assets/apps/ecommerce-create.scss'])
         @vite(['resources/scss/dark/assets/apps/ecommerce-create.scss'])
-
         @vite(['public/plugins/leaflet/leaflet.css'])
-
         @vite(['resources/scss/light/assets/pages/contact_us.scss'])
         @vite(['resources/scss/dark/assets/pages/contact_us.scss'])
-        <!--  END CUSTOM STYLE FILE  -->
 
         <style>
             @media screen and (max-width: 990px) {
@@ -57,7 +52,6 @@
         </style>
 
     </x-slot>
-    <!-- END GLOBAL MANDATORY STYLES -->
 
 
     <div class="row">
@@ -353,7 +347,6 @@
         </div>
     </div>
 
-    <!--  BEGIN CUSTOM SCRIPTS FILE  -->
     <x-slot:footerFiles>
         @vite(['public/plugins/editors/quill/quill.js'])
         @vite(['public/plugins/filepond/filepond.min.js'])
@@ -370,6 +363,5 @@
         @vite(['public/plugins/leaflet/us-states.js'])
         @vite(['public/plugins/leaflet/eu-countries.js'])
     </x-slot>
-    <!--  END CUSTOM SCRIPTS FILE  -->
 
 </x-base-layout>
