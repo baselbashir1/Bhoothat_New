@@ -23,9 +23,9 @@ Route::group(
         'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
     ],
     function () {
-        Route::prefix('modern-dark-menu')->group(function () {
+        Route::prefix('')->group(function () {
 
-            Route::get('/index', function(){
+            Route::get('/index', function () {
                 return view('pages.index');
             });
 
