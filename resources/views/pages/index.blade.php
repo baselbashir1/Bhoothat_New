@@ -1,6 +1,6 @@
 <x-base-layout :scrollspy="false">
 
-    <x-slot:pageTitle>Bhoothat</x-slot>
+    <x-slot:pageTitle>{{ $title }}</x-slot>
 
     <x-slot:headerFiles>
 
@@ -77,7 +77,7 @@
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header" id="inputFormModalLabel">
-                                            <h5 class="modal-title">Login to <b>Bhoothat</b></h5>
+                                            <h5 class="modal-title">{{ __('trans.login_to') }} <b>{{ __('trans.bhoothat') }}</b></h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-hidden="true"><svg aria-hidden="true"
                                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -114,7 +114,7 @@
                                                             placeholder="Enter your email address" required autofocus /> --}}
                                                         <input id="email" class="form-control" type="email"
                                                             name="email" value="{{ old('email') }}"
-                                                            autocomplete="email" placeholder="Enter your email address"
+                                                            autocomplete="email" placeholder="{{ __('trans.email_placeholder') }}"
                                                             required autofocus />
                                                         {{-- <x-input-error :messages="$errors->get('email')" class="mt-2" /> --}}
                                                     </div>
@@ -140,7 +140,7 @@
                                                             placeholder="Enter your password" autocomplete="password"
                                                             required autofocus /> --}}
                                                         <input id="password" class="form-control" type="password"
-                                                            name="password" placeholder="Enter your password"
+                                                            name="password" placeholder="{{ __('trans.password_placeholder') }}"
                                                             autocomplete="password" required autofocus />
                                                         {{-- <x-input-error :messages="$errors->get('password')" class="mt-2" /> --}}
                                                     </div>
@@ -150,18 +150,18 @@
                                                         <input class="form-check-input" type="checkbox"
                                                             value="" id="remember_me" name="remember">
                                                         <label class="form-check-label mb-0" for="form-check-primary">
-                                                            Remember me
+                                                            {{ __('trans.remember_me') }}
                                                         </label>
                                                     </div>
-                                                    <a href="javascript:void(0);">Forget Password?</a>
+                                                    <a href="javascript:void(0);">{{ __('trans.forget_password?') }}</a>
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <div class="btn btn-light-success mt-2 mb-2 btn-no-effect"
                                                     data-bs-dismiss="#loginModal" data-bs-toggle="modal"
-                                                    data-bs-target="#registerModal">Sign up</div>
+                                                    data-bs-target="#registerModal">{{ __('trans.sign_up') }}</div>
                                                 <button type="submit"
-                                                    class="btn btn-primary mt-2 mb-2 btn-no-effect">Log in</button>
+                                                    class="btn btn-primary mt-2 mb-2 btn-no-effect">{{ __('trans.login') }}</button>
                                             </div>
                                         </form>
                                     </div>
@@ -172,7 +172,7 @@
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header" id="inputFormModalLabel">
-                                            <h5 class="modal-title">Register to <b>Bhoothat</b></h5>
+                                            <h5 class="modal-title">{{ __('trans.register_to') }} <b>{{ __('trans.bhoothat') }}</b></h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-hidden="true"><svg aria-hidden="true"
                                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -212,7 +212,7 @@
                                                             autofocus /> --}}
                                                         <input id="name" class="form-control" type="text"
                                                             name="name" value="{{ old('name') }}"
-                                                            autocomplete="name" placeholder="Enter your name" required
+                                                            autocomplete="name" placeholder="{{ __('trans.name_placeholder') }}" required
                                                             autofocus />
                                                         {{-- <x-input-error :messages="$errors->get('name')" class="mt-2" /> --}}
                                                     </div>
@@ -240,7 +240,7 @@
                                                         <input id="email" class="form-control" type="email"
                                                             name="email" value="{{ old('email') }}"
                                                             autocomplete="email"
-                                                            placeholder="Enter your email address" required
+                                                            placeholder="{{ __('trans.email_placeholder') }}" required
                                                             autofocus />
                                                         {{-- <x-input-error :messages="$errors->get('email')" class="mt-2" /> --}}
                                                     </div>
@@ -266,7 +266,7 @@
                                                             placeholder="Enter your password"
                                                             autocomplete="new-password" required autofocus /> --}}
                                                         <input id="password" class="form-control" type="password"
-                                                            name="password" placeholder="Enter your password"
+                                                            name="password" placeholder="{{ __('trans.password_placeholder') }}"
                                                             autocomplete="new-password" required autofocus />
                                                         {{-- <x-input-error :messages="$errors->get('password')" class="mt-2" /> --}}
                                                     </div>
@@ -294,7 +294,7 @@
                                                         <input id="password_confirmation" class="form-control"
                                                             type="password" name="password_confirmation"
                                                             autocomplete="new-password"
-                                                            placeholder="Confirm your password" required autofocus />
+                                                            placeholder="{{ __('trans.confirm_password_placeholder') }}" required autofocus />
                                                         {{-- <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" /> --}}
                                                     </div>
                                                 </div>
@@ -303,10 +303,8 @@
                                                         <input class="form-check-input" type="checkbox"
                                                             value="" id="form-check-primary">
                                                         <label class="form-check-label mb-0" for="form-check-primary">
-                                                            I agree the <a href="javascript:void(0);"
-                                                                class="text-primary">Terms
-                                                                and
-                                                                Conditions</a>
+                                                            {{ __('trans.agree') }} <a href="javascript:void(0);"
+                                                                class="text-primary">{{ __('trans.terms_conditions') }}</a>
                                                         </label>
                                                     </div>
                                                 </div>
@@ -314,9 +312,9 @@
                                             <div class="modal-footer">
                                                 <div class="btn btn-light-success mt-2 mb-2 btn-no-effect"
                                                     data-bs-dismiss="#registerModal" data-bs-toggle="modal"
-                                                    data-bs-target="#loginModal">Sign In</div>
+                                                    data-bs-target="#loginModal">{{ __('trans.sign_in') }}</div>
                                                 <button type="submit"
-                                                    class="btn btn-primary mt-2 mb-2 btn-no-effect">Register</button>
+                                                    class="btn btn-primary mt-2 mb-2 btn-no-effect">{{ __('trans.register') }}</button>
                                             </div>
                                         </form>
                                     </div>

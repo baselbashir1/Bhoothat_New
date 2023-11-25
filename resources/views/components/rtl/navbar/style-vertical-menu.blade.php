@@ -55,7 +55,7 @@
                 </a>
             </li>
             <li class="nav-item theme-text them-text-new">
-                <a href="/" class="nav-link"> Bhoothat </a>
+                <a href="/" class="nav-link"> {{ __('trans.bhoothat') }} </a>
             </li>
         </ul>
 
@@ -93,7 +93,7 @@
                         <a :href="route('logout')"
                             onclick="event.preventDefault();
                                             this.closest('form').submit();">
-                            {{ __('Log Out') }}
+                            {{ __('trans.logout') }}
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-logout-2"
                                 width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
                                 fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -110,7 +110,7 @@
             @else
                 <li class="nav-item theme-toggle-item theme-auth-new">
                     <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
-                        Log In
+                        {{ __('trans.login') }}
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-login-2" width="24"
                             height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                             stroke-linecap="round" stroke-linejoin="round">

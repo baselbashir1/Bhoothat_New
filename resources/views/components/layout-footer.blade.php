@@ -10,9 +10,9 @@
     <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-4">
         <div class="single-post-content">
             <div class="post-content text-center">
-                <h4><b>Bhoothat</b></h4>
+                <h4><b>{{ __('trans.bhoothat') }}</b></h4>
                 <hr class="my-5">
-                <h5 class="mb-5">Social Links</h5>
+                <h5 class="mb-5">{{ __('trans.social_links') }}</h5>
                 <div class="row">
                     <div class="col">
                         <a href="#">

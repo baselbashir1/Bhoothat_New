@@ -15,8 +15,8 @@ class HomeController extends Controller
         // if (app()->getLocale() == 'ar') return view('pages-rtl.app.ecommerce.shop', ['title' => 'Dashboard'], ['services' => $services]);
 
 
-        if (app()->getLocale() == 'en') return view('pages.index');
-        if (app()->getLocale() == 'ar') return view('pages-rtl.index');
+        if (app()->getLocale() == 'en') return view('pages.index', ['title' => __('trans.bhoothat')]);
+        if (app()->getLocale() == 'ar') return view('pages-rtl.index', ['title' => __('trans.bhoothat')]);
     }
 
     public function clear()
