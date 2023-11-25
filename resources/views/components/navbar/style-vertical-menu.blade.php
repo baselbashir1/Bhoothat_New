@@ -146,13 +146,42 @@
                     </svg> --}}
                 </a>
                 <div class="dropdown-menu position-absolute" aria-labelledby="language-dropdown">
-                    <a class="dropdown-item d-flex" href="javascript:void(0);"><img
-                            src="{{ Vite::asset('public/src/assets/img/1x1/uae.png') }}" class="flag-width"
-                            alt="flag"> <span class="align-self-center">&nbsp;Arabic</span></a>
-                    <a class="dropdown-item d-flex" href="javascript:void(0);"><img
-                            src="{{ Vite::asset('public/src/assets/img/1x1/us.svg') }}" class="flag-width"
-                            alt="flag"> <span class="align-self-center">&nbsp;English</span></a>
+                    @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        <a rel="alternate" hreflang="{{ $localeCode }}"
+                            href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+
+                            @if (LaravelLocalization::getCurrentLocale() == 'ar')
+                                <img src="{{ Vite::asset('resources/images/1x1/uae.png') }}" class="flag-width"
+                                    alt="flag">
+                            @else
+                                <img src="{{ Vite::asset('resources/images/1x1/us.svg') }}" class="flag-width"
+                                    alt="flag">
+                            @endif
+
+                            {{ $properties['native'] }}
+                            <span class="align-self-center">
+                                &nbsp;{{ $localeCode == LaravelLocalization::getCurrentLocale() ? 'active' : '' }}
+                            </span>
+                        </a>
+                        {{-- <a class="dropdown-item d-flex" href="javascript:void(0);"><img
+                                src="{{ Vite::asset('public/src/assets/img/1x1/us.svg') }}" class="flag-width"
+                                alt="flag"> <span class="align-self-center">&nbsp;English</span></a> --}}
+                    @endforeach
                 </div>
+                {{-- <div class="dropdown-menu position-absolute" aria-labelledby="language-dropdown">
+                    @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        <li class="container">
+                            <a rel="alternate" hreflang="{{ $localeCode }}"
+                                href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                <div class="container" style="width: 150px">
+                                    {{ $properties['native'] }}
+                                    <span style="color:greenyellow">
+                                        {{ $localeCode == LaravelLocalization::getCurrentLocale() ? 'active' : '' }}</span>
+                                </div>
+                            </a>
+                        </li>
+                    @endforeach
+                </div> --}}
             </li>
 
             <li class="nav-item theme-toggle-item theme-mode-new">

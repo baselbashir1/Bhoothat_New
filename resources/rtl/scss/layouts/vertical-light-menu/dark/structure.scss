@@ -119,9 +119,9 @@ body.layout-dark {
   #content {
     width: 50%;
     flex-grow: 8;
-    margin-top: 70px;
+    margin-top: 60px;
     margin-bottom: 0;
-    margin-right: 255px;
+    // margin-right: 255px;
     -webkit-transition: 0.3s ease all;
     transition: 0.3s ease all;
   }
@@ -233,16 +233,16 @@ body.layout-dark {
     z-index: 1030;
     position: fixed;
     top: 0;
-    margin-top: 10px;
+    margin-top: 0;
     left: 0;
-    right: 279px;
+    right: 0;
     -webkit-transition: 0.3s right, 0s padding;
     transition: 0.3s right, 0s padding;
     backdrop-filter: blur(31px);
     padding: 11px 16px 11px 20px;
     min-height: 62px;
-    width: calc(100% - 255px - 48px);
-    border-radius: 8px;
+    // width: calc(100% - 255px - 48px);
+    // border-radius: 8px;
     border: none;
     background-color: rgb(25 30 58 / 96%) !important;
     -webkit-backdrop-filter: saturate(200%) blur(6px);
@@ -250,7 +250,8 @@ body.layout-dark {
     box-shadow: -18px 20px 10.3px -23px rgb(0 0 0 / 15%);
 
     &.container-xxl {
-      right: 255px;
+    //   right: 255px;
+      right: 0;
     }
   }
 
@@ -701,8 +702,8 @@ body.layout-dark {
       flex-flow: row wrap;
       -ms-flex-align: center;
       align-items: center;
-      
-      
+
+
       .search-form-control {
         opacity: 1;
         transition: opacity 200ms, left 200ms;
@@ -712,7 +713,7 @@ body.layout-dark {
         }
       }
 
-      
+
 
       .search-bar {
         width: 100%;
@@ -901,7 +902,7 @@ body.layout-dark {
             display: inline-block;
           }
         }
-        
+
       }
 
       span {
@@ -909,7 +910,7 @@ body.layout-dark {
           display: none;
         }
       }
-      
+
     }
 
     #content {
@@ -1203,7 +1204,7 @@ body.layout-dark {
               }
             }
           }
-          
+
         }
       }
 
@@ -1233,13 +1234,13 @@ body.layout-dark {
 
         &:hover {
           color: #fff;
-  
+
           svg:not(.badge-icon) {
             color: #fff;
             fill: #4361ee0a;
           }
         }
-        
+
       }
 
       > {
@@ -1269,7 +1270,7 @@ body.layout-dark {
 
             &:hover {
               color: #fff;
-    
+
               svg {
                 color: #fff!important;
                 fill: #4361ee0a;
@@ -1337,14 +1338,14 @@ body.layout-dark {
           border-top-right-radius: 10px;
           border-bottom-right-radius: 10px;
           font-weight: 500;
-          
+
           &:before {
             background-color: $white;
           }
-  
+
           &:hover {
             color: #fff!important;
-      
+
             &:before {
               background: #fff !important;
               box-shadow: 0 0 0px 2px rgb(255 255 255 / 43%);
@@ -1353,14 +1354,14 @@ body.layout-dark {
           }
         }
       }
-  
+
     }
 
     ul.submenu {
       > li {
 
         margin-top: 3px;
-        
+
         &.active {
           position: relative;
 
@@ -1378,7 +1379,7 @@ body.layout-dark {
             right: -5px;
             top: 1px;
           }
-          
+
         }
 
         a {
@@ -1503,7 +1504,7 @@ body.layout-dark {
     animation-name: e-fadeInUp;
   }
 
-  /*  
+  /*
     ======================
         Footer-wrapper
     ======================
@@ -1565,7 +1566,7 @@ body.layout-dark {
 
 /*Page title*/
 
-/* 
+/*
 =====================
     Navigation Bar
 =====================
@@ -1582,7 +1583,7 @@ body.layout-dark {
 
 /* User Profile Dropdown*/
 
-/* 
+/*
 ===============
     Sidebar
 ===============
@@ -1612,13 +1613,13 @@ body.layout-dark {
   }
 }
 
-/*  
+/*
     ======================
         Footer-wrapper
     ======================
 */
 
-/*  
+/*
     ======================
         MEDIA QUERIES
     ======================
@@ -1631,8 +1632,8 @@ body.layout-dark {
         padding-left: 16px;
         padding-right: 16px;
         right: 0;
-        right: 16px;
-        width: calc(100% - 32px);
+        right: 0;
+        width: 100%;
 
         &.container-xxl {
           right: 0;
@@ -1665,8 +1666,8 @@ body.layout-dark {
           display: none;
         }
       }
-      
-      
+
+
 
       #content {
         margin-right: 0;
@@ -1699,7 +1700,7 @@ body.layout-dark {
       &.search-active .form-inline.search {
         display: flex;
       }
-      
+
     }
 
     &.alt-menu .sidebar-closed > .sidebar-wrapper {
@@ -1746,7 +1747,7 @@ body.layout-dark {
     }
   }
 
-  
+
 
   /*
       =============

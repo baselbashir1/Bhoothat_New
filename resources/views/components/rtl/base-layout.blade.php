@@ -1,13 +1,3 @@
-{{-- 
-
-/**
-*
-* Created a new component <x-rtl.base-layout/>.
-* 
-*/
-
---}}
-
 @php
     $isBoxed = layoutConfig()['boxed'];
     $isAltMenu = layoutConfig()['alt-menu'];
@@ -30,7 +20,51 @@
     <!-- Bootstrap-Iconpicker -->
     <link rel="stylesheet" href="dist/css/bootstrap-iconpicker.min.css" />
 
-    @vite(['resources/scss/layouts/vertical-light-menu/light/loader.scss'])
+    @vite(['public/plugins-rtl/bootstrap/bootstrap.rtl.min.css'])
+    @vite(['resources/rtl/scss/layouts/vertical-light-menu/light/loader.scss'])
+    @vite(['resources/rtl/scss/layouts/vertical-light-menu/dark/loader.scss'])
+    @vite(['resources/rtl/scss/light/assets/components/carousel.scss'])
+    @vite(['resources/rtl/scss/dark/assets/components/carousel.scss'])
+    @vite(['resources/rtl/scss/light/assets/apps/blog-create.scss'])
+    @vite(['resources/rtl/scss/dark/assets/apps/blog-create.scss'])
+    @vite(['resources/rtl/scss/light/assets/apps/blog-post.scss'])
+    @vite(['resources/rtl/scss/dark/assets/apps/blog-post.scss'])
+    @vite(['resources/rtl/scss/light/assets/forms/switches.scss'])
+    @vite(['resources/rtl/scss/dark/assets/forms/switches.scss'])
+    @vite(['resources/rtl/scss/light/plugins/tagify/custom-tagify.scss'])
+    @vite(['resources/rtl/scss/dark/plugins/tagify/custom-tagify.scss'])
+    @vite(['resources/rtl/scss/light/plugins/filepond/custom-filepond.scss'])
+    @vite(['resources/rtl/scss/dark/plugins/filepond/custom-filepond.scss'])
+    @vite(['resources/rtl/scss/light/assets/components/tabs.scss'])
+    @vite(['resources/rtl/scss/dark/assets/components/tabs.scss'])
+    @vite(['resources/rtl/scss/light/assets/elements/custom-pagination.scss'])
+    @vite(['resources/rtl/scss/dark/assets/elements/custom-pagination.scss'])
+    @vite(['resources/rtl/scss/light/assets/scrollspyNav.scss'])
+    @vite(['resources/rtl/scss/dark/assets/scrollspyNav.scss'])
+    @vite(['resources/rtl/scss/light/plugins/editors/quill/quill.snow.scss'])
+    @vite(['resources/rtl/scss/dark/plugins/editors/quill/quill.snow.scss'])
+    @vite(['resources/rtl/scss/layouts/vertical-dark-menu/light/loader.scss'])
+    @vite(['resources/rtl/scss/layouts/vertical-dark-menu/dark/loader.scss'])
+    @vite(['resources/rtl/scss/layouts/vertical-light-menu/light/loader.scss'])
+    @vite(['resources/rtl/scss/layouts/vertical-light-menu/dark/loader.scss'])
+    @vite(['public/plugins-rtl/animate/animate.css'])
+    @vite(['public/plugins-rtl/tagify/tagify.css'])
+    @vite(['public/plugins-rtl/filepond/filepond.min.css'])
+    @vite(['public/plugins-rtl/filepond/FilePondPluginImagePreview.min.css'])
+    @vite(['resources/rtl/scss/layouts/vertical-light-menu/light/structure.scss'])
+    @vite(['resources/rtl/scss/layouts/vertical-light-menu/dark/structure.scss'])
+    {{-- @vite(['resources/scss/light/plugins/plugins.min.scss'])
+    @vite(['resources/scss/dark/plugins/plugins.min.scss']) --}}
+    @vite(['resources/rtl/layouts/vertical-light-menu/loader.js'])
+    @vite(['resources/rtl/scss/layouts/vertical-light-menu/light/loader.scss'])
+
+    {{-- @vite(['resources/rtl/scss/dark/plugins/notification/snackbar/custom-snackbar.scss']) --}}
+    {{-- @import './notification/snackbar/custom-snackbar.scss'; --}}
+    {{-- @vite(['resources/rtl/scss/dark/plugins/bootstrap-touchspin/custom-jquery.bootstrap-touchspin.min.scss']) --}}
+    {{-- @import './bootstrap-touchspin/custom-jquery.bootstrap-touchspin.min.scss'; --}}
+
+
+    {{-- <style> scroolbar </style> --}}
 
     {{-- @if (Request::is('rtl/modern-light-menu/*'))
         @vite(['resources/rtl/layouts/vertical-light-menu/loader.js'])
@@ -67,28 +101,14 @@
     <!-- END GLOBAL MANDATORY STYLES -->
 </head>
 
-<body @class([
-    // 'layout-dark' => $isDark,
-    'layout-rtl' => $isRTL,
-    'layout-boxed' => $isBoxed,
-    'alt-menu' =>
-        $isAltMenu || Request::routeIs('collapsibleMenu') ? true : false,
-    'error' => Request::routeIs('404') ? true : false,
-    'maintanence' => Request::routeIs('maintenance') ? true : false,
-]) @if ($scrollspy == 1)
-    {{ $scrollspyConfig }}
-@else
-    {{ '' }}
-    @endif @if (Request::routeIs('fullWidth'))
-        layout="full-width"
-    @endif >
+<body class="layout-boxed scrollbar">
 
     <!-- BEGIN LOADER -->
     <x-rtl.layout-loader />
     <!--  END LOADER -->
 
     {{--
-        
+
     /*
     *
     *   Check if the routes are not single pages ( which does not contains sidebar or topbar  ) such as :-
@@ -100,108 +120,124 @@
 
     --}}
 
-    @if (
-        !Request::routeIs('404') &&
-            !Request::routeIs('maintenance') &&
-            !Request::routeIs('signin') &&
-            !Request::routeIs('signup') &&
-            !Request::routeIs('lockscreen') &&
-            !Request::routeIs('password-reset') &&
-            !Request::routeIs('2Step'))
+    {{-- @if (!Request::routeIs('404') && !Request::routeIs('maintenance') && !Request::routeIs('signin') && !Request::routeIs('signup') && !Request::routeIs('lockscreen') && !Request::routeIs('password-reset') && !Request::routeIs('2Step'))
 
         @auth
+            @if (!Request::routeIs('blank')) --}}
+    <!--  BEGIN NAVBAR  -->
+    <x-rtl.navbar.style-vertical-menu classes="" />
+    <!--  END NAVBAR  -->
+    {{-- @endif
+        @endauth --}}
+
+    <!--  BEGIN MAIN CONTAINER  -->
+    <div class="main-container " id="container">
+
+        <!--  BEGIN LOADER  -->
+        <x-rtl.layout-overlay />
+        <!--  END LOADER  -->
+
+        {{-- @auth
             @if (!Request::routeIs('blank'))
-                <!--  BEGIN NAVBAR  -->
-                <x-rtl.navbar.style-vertical-menu classes="{{ $isBoxed ? 'container-xxl' : '' }}" />
-                <!--  END NAVBAR  -->
+                <!--  BEGIN SIDEBAR  -->
+                <x-rtl.menu.vertical-menu />
+                <!--  END SIDEBAR  -->
             @endif
-        @endauth
+        @endauth --}}
 
-        <!--  BEGIN MAIN CONTAINER  -->
-        <div class="main-container " id="container">
-
-            <!--  BEGIN LOADER  -->
-            <x-rtl.layout-overlay />
-            <!--  END LOADER  -->
-
-            @auth
-                @if (!Request::routeIs('blank'))
-                    <!--  BEGIN SIDEBAR  -->
-                    <x-rtl.menu.vertical-menu />
-                    <!--  END SIDEBAR  -->
-                @endif
-            @endauth
-
-            <!--  BEGIN CONTENT AREA  -->
-            <div id="content" class="main-content {{ Request::routeIs('blank') ? 'ms-0 mt-0' : '' }}">
-
-                @if ($scrollspy == 1)
-                    <div class="container">
-                        <div class="container">
-                            {{ $slot }}
-                        </div>
-                    </div>
-                @else
-                    <div class="layout-px-spacing">
-                        <div class="middle-content {{ $isBoxed ? 'container-xxl' : '' }} p-0">
-                            {{ $slot }}
-                        </div>
-                    </div>
-                @endif
-
-                <!--  BEGIN FOOTER  -->
-                <x-rtl.layout-footer />
-                <!--  END FOOTER  -->
-
+        <!--  BEGIN CONTENT AREA  -->
+        {{-- <div id="content" class="main-content {{ Request::routeIs('blank') ? 'ms-0 mt-0' : '' }}"> --}}
+        <div id="content" class="main-content">
+            <div class="contaienr">
+                <div class="contaienr">
+                    {{ $slot }}
+                </div>
             </div>
-            <!--  END CONTENT AREA  -->
+            {{-- @if ($scrollspy == 1)
+                <div class="container">
+                    <div class="container">
+                        {{ $slot }}
+                    </div>
+                </div>
+            @else
+                <div class="layout-px-spacing">
+                    <div class="middle-content {{ $isBoxed ? 'container-xxl' : '' }} p-0">
+                        {{ $slot }}
+                    </div>
+                </div>
+            @endif --}}
+
+            <!--  BEGIN FOOTER  -->
+            <x-rtl.layout-footer />
+            <!--  END FOOTER  -->
 
         </div>
-        <!--  END MAIN CONTAINER  -->
-    @else
-        {{ $slot }}
+        <!--  END CONTENT AREA  -->
+
+    </div>
+    <!--  END MAIN CONTAINER  -->
+    {{-- @else
+    {{ $slot }}
+    @endif --}}
+
+    {{-- @if (!Request::routeIs('404') && !Request::routeIs('maintenance') && !Request::routeIs('signin') && !Request::routeIs('signup') && !Request::routeIs('lockscreen') && !Request::routeIs('password-reset') && !Request::routeIs('2Step')) --}}
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    {{-- <script src="{{ asset('plugins-rtl/bootstrap/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('plugins-rtl/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+    <script src="{{ asset('plugins-rtl/mousetrap/mousetrap.min.js') }}"></script>
+    <script src="{{ asset('plugins-rtl/waves/waves.min.js') }}"></script>
+    <script src="{{ asset('plugins-rtl/highlight/highlight.pack.js') }}"></script> --}}
+    @vite(['public/plugins-rtl/bootstrap/bootstrap.bundle.min.js'])
+    @vite(['public/plugins-rtl/perfect-scrollbar/perfect-scrollbar.min.js'])
+    @vite(['public/plugins-rtl/mousetrap/mousetrap.min.js'])
+    @vite(['public/plugins-rtl/waves/waves.min.js'])
+    @vite(['public/plugins-rtl/highlight/highlight.pack.js'])
+
+    <!-- jQuery CDN -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap CDN -->
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js">
+    </script>
+    <!-- Bootstrap-Iconpicker Bundle -->
+    <script type="text/javascript" src="dist/js/bootstrap-iconpicker.bundle.min.js"></script>
+
+    @if ($scrollspy == 1)
+        @vite(['resources/rtl/assets/js/scrollspyNav.js'])
     @endif
 
-    @if (
-        !Request::routeIs('404') &&
-            !Request::routeIs('maintenance') &&
-            !Request::routeIs('signin') &&
-            !Request::routeIs('signup') &&
-            !Request::routeIs('lockscreen') &&
-            !Request::routeIs('password-reset') &&
-            !Request::routeIs('2Step'))
-        <!-- BEGIN GLOBAL MANDATORY STYLES -->
-        <script src="{{ asset('plugins-rtl/bootstrap/bootstrap.bundle.min.js') }}"></script>
-        <script src="{{ asset('plugins-rtl/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
-        <script src="{{ asset('plugins-rtl/mousetrap/mousetrap.min.js') }}"></script>
-        <script src="{{ asset('plugins-rtl/waves/waves.min.js') }}"></script>
-        <script src="{{ asset('plugins-rtl/highlight/highlight.pack.js') }}"></script>
-
-        <!-- jQuery CDN -->
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <!-- Bootstrap CDN -->
-        <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js">
-        </script>
-        <!-- Bootstrap-Iconpicker Bundle -->
-        <script type="text/javascript" src="dist/js/bootstrap-iconpicker.bundle.min.js"></script>
-
-        @if ($scrollspy == 1)
-            @vite(['resources/rtl/assets/js/scrollspyNav.js'])
-        @endif
-
-        {{-- @if (Request::is('rtl/modern-light-menu/*'))
+    {{-- @if (Request::is('rtl/modern-light-menu/*'))
             @vite(['resources/rtl/layouts/vertical-light-menu/app.js'])
         @elseif (Request::is('rtl/modern-dark-menu/*')) --}}
-        @vite(['resources/rtl/layouts/vertical-dark-menu/app.js'])
-        {{-- @elseif (Request::is('rtl/collapsible-menu/*'))
+    @vite(['resources/rtl/layouts/vertical-dark-menu/app.js'])
+    {{-- @elseif (Request::is('rtl/collapsible-menu/*'))
             @vite(['resources/rtl/layouts/collapsible-menu/app.js'])
         @endif --}}
 
-        <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- END GLOBAL MANDATORY STYLES -->
 
-    @endif
+    {{-- @endif --}}
+
+    @vite(['public/plugins-rtl/bootstrap/bootstrap.bundle.min.js'])
+    @vite(['public/plugins-rtl/perfect-scrollbar/perfect-scrollbar.min.js'])
+    @vite(['public/plugins-rtl/mousetrap/mousetrap.min.js'])
+    @vite(['public/plugins-rtl/waves/waves.min.js'])
+    @vite(['public/plugins-rtl/filepond/filepond.min.js'])
+    @vite(['public/plugins-rtl/filepond/FilePondPluginFileValidateType.min.js'])
+    @vite(['public/plugins-rtl/filepond/FilePondPluginImageExifOrientation.min.js'])
+    @vite(['public/plugins-rtl/filepond/FilePondPluginImagePreview.min.js'])
+    @vite(['public/plugins-rtl/filepond/FilePondPluginImageCrop.min.js'])
+    @vite(['public/plugins-rtl/filepond/FilePondPluginImageResize.min.js'])
+    @vite(['public/plugins-rtl/filepond/FilePondPluginImageTransform.min.js'])
+    @vite(['public/plugins-rtl/filepond/filepondPluginFileValidateSize.min.js'])
+    @vite(['resources/rtl/assets/js/apps/blog-create.js'])
+    {{-- @vite(['resources/assets/js/scrollspyNav.js']) --}}
+    @vite(['public/plugins-rtl/tagify/tagify.min.js'])
+    @vite(['public/plugins-rtl/highlight/highlight.pack.js'])
+    @vite(['public/plugins-rtl/editors/quill/quill.js'])
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
     {{ $footerFiles }}
+
 </body>
 
 </html>

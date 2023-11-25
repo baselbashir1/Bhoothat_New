@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ServiceController;
@@ -25,9 +26,11 @@ Route::group(
     function () {
         Route::prefix('')->group(function () {
 
-            Route::get('/index', function () {
-                return view('pages.index');
-            });
+            // Route::get('/index', function () {
+            //     return view('pages.index');
+            // });
+            Route::get('/index', [HomeController::class, 'index']);
+            Route::get('/clear', [HomeController::class, 'clear']);
 
             Route::middleware(['auth'])->group(function () {
                 Route::controller(ServiceController::class)->group(function () {

@@ -32,8 +32,8 @@
     @vite(['resources/scss/dark/assets/forms/switches.scss'])
     @vite(['resources/scss/light/plugins/tagify/custom-tagify.scss'])
     @vite(['resources/scss/dark/plugins/tagify/custom-tagify.scss'])
-    @vite(['resources/scss/light/plugins/tagify/filepond\custom-filepond.scss'])
-    @vite(['resources/scss/dark/plugins/tagify/filepond\custom-filepond.scss'])
+    @vite(['resources/scss/light/plugins/filepond/custom-filepond.scss'])
+    @vite(['resources/scss/dark/plugins/filepond/custom-filepond.scss'])
     @vite(['resources/scss/light/assets/components/tabs.scss'])
     @vite(['resources/scss/dark/assets/components/tabs.scss'])
     @vite(['resources/scss/light/assets/elements/custom-pagination.scss'])
@@ -53,7 +53,7 @@
     @vite(['resources/scss/layouts/vertical-light-menu/light/structure.scss'])
     @vite(['resources/scss/layouts/vertical-light-menu/dark/structure.scss'])
     @vite(['resources/scss/light/plugins/plugins.min.scss'])
-    @vite(['resources/scss/dark/plugins/plugins.min.scss'])
+    {{-- @vite(['resources/scss/dark/plugins/plugins.min.scss']) --}}
     @vite(['resources/layouts/vertical-light-menu/loader.js'])
 
     {{-- @vite(['public/layouts/horizontal-dark-menu/css/light/plugins.css'])
