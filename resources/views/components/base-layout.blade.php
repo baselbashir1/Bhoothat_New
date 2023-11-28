@@ -42,22 +42,16 @@
     @vite(['resources/scss/dark/assets/scrollspyNav.scss'])
     @vite(['resources/scss/light/plugins/editors/quill/quill.snow.scss'])
     @vite(['resources/scss/dark/plugins/editors/quill/quill.snow.scss'])
-    @vite(['resources/scss/layouts/vertical-dark-menu/light/loader.scss'])
-    @vite(['resources/scss/layouts/vertical-dark-menu/dark/loader.scss'])
-    @vite(['resources/scss/layouts/vertical-light-menu/light/loader.scss'])
-    @vite(['resources/scss/layouts/vertical-light-menu/dark/loader.scss'])
     @vite(['public/plugins/animate/animate.css'])
     @vite(['public/plugins/tagify/tagify.css'])
     @vite(['public/plugins/filepond/filepond.min.css'])
     @vite(['public/plugins/filepond/FilePondPluginImagePreview.min.css'])
+
     @vite(['resources/scss/layouts/vertical-light-menu/light/structure.scss'])
     @vite(['resources/scss/layouts/vertical-light-menu/dark/structure.scss'])
-    @vite(['resources/scss/light/plugins/plugins.min.scss'])
-    {{-- @vite(['resources/scss/dark/plugins/plugins.min.scss']) --}}
-    @vite(['resources/layouts/vertical-light-menu/loader.js'])
 
-    {{-- @vite(['public/layouts/horizontal-dark-menu/css/light/plugins.css'])
-    @vite(['public/layouts/horizontal-dark-menu/css/dark/plugins.css']) --}}
+    @vite(['resources/layouts/vertical-light-menu/loader.js'])
+    @vite(['resources/scss/light/plugins/plugins.min.scss'])
 
     <style>
         /* .scrollbar {
@@ -94,18 +88,9 @@
         }
     </style>
 
-
-
-    {{-- @if (Request::is('modern-light-menu/*'))
-        @vite(['resources/layouts/vertical-light-menu/loader.js'])
-    @elseif (Request::is('modern-dark-menu/*')) --}}
-    @vite(['resources/layouts/vertical-dark-menu/loader.js'])
-    {{-- @elseif (Request::is('collapsible-menu/*'))
-        @vite(['resources/layouts/collapsible-menu/loader.js'])
-    @endif --}}
+    @vite(['resources/layouts/vertical-light-menu/loader.js'])
 
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('plugins/bootstrap/bootstrap.min.css') }}"> --}}
     @vite(['resources/scss/light/assets/main.scss', 'resources/scss/dark/assets/main.scss'])
 
     @if (
@@ -116,15 +101,11 @@
             !Request::routeIs('lockscreen') &&
             !Request::routeIs('password-reset') &&
             !Request::routeIs('2Step') &&
-            // Real Logins
             !Request::routeIs('login'))
         @if ($scrollspy == 1)
             @vite(['resources/scss/light/assets/scrollspyNav.scss', 'resources/scss/dark/assets/scrollspyNav.scss'])
         @endif
-        {{-- <link rel="stylesheet" type="text/css" href="{{ asset('plugins/waves/waves.min.css') }}"> --}}
         @vite(['public/plugins/waves/waves.min.css'])
-        {{-- <link rel="stylesheet" type="text/css" href="{{ asset('plugins/highlight/styles/monokai-sublime.css') }}"> --}}
-        {{-- public\plugins\highlight\styles\monokai-sublime.css --}}
         @vite(['public/plugins/highlight/styles/monokai-sublime.css'])
         @vite(['resources/scss/light/plugins/perfect-scrollbar/perfect-scrollbar.scss', 'resources/scss/layouts/vertical-light-menu/light/structure.scss', 'resources/scss/layouts/vertical-light-menu/dark/structure.scss'])
 
@@ -136,53 +117,14 @@
 </head>
 
 <body class="layout-boxed scrollbar">
-    {{-- <body @class([
-    // 'layout-dark' => $isDark,
-    'layout-boxed' => $isBoxed,
-    'alt-menu' =>
-        $isAltMenu || Request::routeIs('collapsibleMenu') ? true : false,
-    'error' => Request::routeIs('404') ? true : false,
-    'maintanence' => Request::routeIs('maintenance') ? true : false,
-])
-    @if ($scrollspy == 1) {{ $scrollspyConfig }}
-@else
-    {{ '' }} @endif
-    @if (Request::routeIs('fullWidth')) layout="full-width" @endif> --}}
 
     <!-- BEGIN LOADER -->
     <x-layout-loader />
     <!--  END LOADER -->
 
-    {{--
-
-    /*
-    *
-    *   Check if the routes are not single pages ( which does not contains sidebar or topbar  ) such as :-
-    *   - 404
-    *   - maintenance
-    *   - authentication
-    *
-    */
-
-    --}}
-
-    {{-- @if (!Request::routeIs('404') &&
-    !Request::routeIs('maintenance') &&
-    !Request::routeIs('signin') &&
-    !Request::routeIs('signup') &&
-    !Request::routeIs('lockscreen') &&
-    !Request::routeIs('password-reset') &&
-    !Request::routeIs('2Step') &&
-    // Real Logins
-    !Request::routeIs('login')) --}}
-
-    {{-- @auth --}}
-    {{-- @if (!Request::routeIs('blank')) --}}
     <!--  BEGIN NAVBAR  -->
     <x-navbar.style-vertical-menu classes="" />
     <!--  END NAVBAR  -->
-    {{-- @endif --}}
-    {{-- @endauth --}}
 
     <!--  BEGIN MAIN CONTAINER  -->
     <div class="main-container" id="container">
@@ -191,36 +133,13 @@
         <x-layout-overlay />
         <!--  END LOADER  -->
 
-        {{-- @auth --}}
-        {{-- @if (!Request::routeIs('blank')) --}}
-        <!--  BEGIN SIDEBAR  -->
-        {{-- <x-menu.vertical-menu /> --}}
-        <!--  END SIDEBAR  -->
-        {{-- @endif --}}
-        {{-- @endauth --}}
-
         <!--  BEGIN CONTENT AREA  -->
-        {{-- <div id="content" class="main-content {{ Request::routeIs('blank') ? 'ms-0 mt-0' : '' }}"> --}}
         <div id="content" class="main-content">
             <div class="contaienr">
                 <div class="contaienr">
                     {{ $slot }}
                 </div>
             </div>
-
-            {{-- @if ($scrollspy == 1)
-                <div class="container">
-                    <div class="container">
-                        {{ $slot }}
-                    </div>
-                </div>
-            @else
-                <div class="layout-px-spacing">
-                    <div class="middle-content {{ $isBoxed ? 'container-xxl' : '' }} p-0">
-                        {{ $slot }}
-                    </div>
-                </div>
-            @endif --}}
 
             <!--  BEGIN FOOTER  -->
             <x-layout-footer />
@@ -230,26 +149,6 @@
         <!--  END CONTENT AREA  -->
 
     </div>
-    <!--  END MAIN CONTAINER  -->
-    {{-- @else
-        {{ $slot }}
-    @endif --}}
-
-    {{-- @if (!Request::routeIs('404') &&
-    !Request::routeIs('maintenance') &&
-    !Request::routeIs('signin') &&
-    !Request::routeIs('signup') &&
-    !Request::routeIs('lockscreen') &&
-    !Request::routeIs('password-reset') &&
-    !Request::routeIs('2Step') &&
-    // Real Logins
-    !Request::routeIs('login')) --}}
-
-    @vite(['public/plugins/bootstrap/bootstrap.bundle.min.js'])
-    @vite(['public/plugins/perfect-scrollbar/perfect-scrollbar.min.js'])
-    @vite(['public/plugins/mousetrap/mousetrap.min.js'])
-    @vite(['public/plugins/waves/waves.min.js'])
-    @vite(['public/plugins/highlight/highlight.pack.js'])
 
     <!-- jQuery CDN -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -263,19 +162,7 @@
         @vite(['resources/assets/js/scrollspyNav.js'])
     @endif
 
-    {{-- @if (Request::is('modern-light-menu/*'))
-            @vite(['resources/layouts/vertical-light-menu/app.js'])
-        @elseif (Request::is('modern-dark-menu/*')) --}}
     @vite(['resources/layouts/vertical-light-menu/app.js'])
-    {{-- @vite(['resources/layouts/vertical-dark-menu/app.js']) --}}
-    {{-- @elseif (Request::is('collapsible-menu/*'))
-            @vite(['resources/layouts/collapsible-menu/app.js'])
-        @endif --}}
-
-    <!-- END GLOBAL MANDATORY STYLES -->
-
-    {{-- @endif --}}
-
     @vite(['public/plugins/bootstrap/bootstrap.bundle.min.js'])
     @vite(['public/plugins/perfect-scrollbar/perfect-scrollbar.min.js'])
     @vite(['public/plugins/mousetrap/mousetrap.min.js'])
@@ -289,11 +176,11 @@
     @vite(['public/plugins/filepond/FilePondPluginImageTransform.min.js'])
     @vite(['public/plugins/filepond/filepondPluginFileValidateSize.min.js'])
     @vite(['resources/assets/js/apps/blog-create.js'])
-    {{-- @vite(['resources/assets/js/scrollspyNav.js']) --}}
     @vite(['public/plugins/tagify/tagify.min.js'])
     @vite(['public/plugins/highlight/highlight.pack.js'])
     @vite(['public/plugins/editors/quill/quill.js'])
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    {{-- @vite(['resources/assets/js/scrollspyNav.js']) --}}
 
     {{ $footerFiles }}
 

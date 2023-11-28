@@ -77,7 +77,9 @@
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header" id="inputFormModalLabel">
-                                            <h5 class="modal-title">{{ __('trans.login_to') }} <b>{{ __('trans.bhoothat') }}</b></h5>
+                                            <h5 class="modal-title">{{ __('trans.login_to') }}
+                                                <b>{{ __('trans.bhoothat') }}</b>
+                                            </h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-hidden="true"><svg aria-hidden="true"
                                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -114,8 +116,9 @@
                                                             placeholder="Enter your email address" required autofocus /> --}}
                                                         <input id="email" class="form-control" type="email"
                                                             name="email" value="{{ old('email') }}"
-                                                            autocomplete="email" placeholder="{{ __('trans.email_placeholder') }}"
-                                                            required autofocus />
+                                                            autocomplete="email"
+                                                            placeholder="{{ __('trans.email_placeholder') }}" required
+                                                            autofocus />
                                                         {{-- <x-input-error :messages="$errors->get('email')" class="mt-2" /> --}}
                                                     </div>
                                                 </div>
@@ -140,7 +143,8 @@
                                                             placeholder="Enter your password" autocomplete="password"
                                                             required autofocus /> --}}
                                                         <input id="password" class="form-control" type="password"
-                                                            name="password" placeholder="{{ __('trans.password_placeholder') }}"
+                                                            name="password"
+                                                            placeholder="{{ __('trans.password_placeholder') }}"
                                                             autocomplete="password" required autofocus />
                                                         {{-- <x-input-error :messages="$errors->get('password')" class="mt-2" /> --}}
                                                     </div>
@@ -153,7 +157,8 @@
                                                             {{ __('trans.remember_me') }}
                                                         </label>
                                                     </div>
-                                                    <a href="javascript:void(0);">{{ __('trans.forget_password?') }}</a>
+                                                    <a
+                                                        href="javascript:void(0);">{{ __('trans.forget_password?') }}</a>
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
@@ -172,7 +177,9 @@
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header" id="inputFormModalLabel">
-                                            <h5 class="modal-title">{{ __('trans.register_to') }} <b>{{ __('trans.bhoothat') }}</b></h5>
+                                            <h5 class="modal-title">{{ __('trans.register_to') }}
+                                                <b>{{ __('trans.bhoothat') }}</b>
+                                            </h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-hidden="true"><svg aria-hidden="true"
                                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -212,7 +219,8 @@
                                                             autofocus /> --}}
                                                         <input id="name" class="form-control" type="text"
                                                             name="name" value="{{ old('name') }}"
-                                                            autocomplete="name" placeholder="{{ __('trans.name_placeholder') }}" required
+                                                            autocomplete="name"
+                                                            placeholder="{{ __('trans.name_placeholder') }}" required
                                                             autofocus />
                                                         {{-- <x-input-error :messages="$errors->get('name')" class="mt-2" /> --}}
                                                     </div>
@@ -266,7 +274,8 @@
                                                             placeholder="Enter your password"
                                                             autocomplete="new-password" required autofocus /> --}}
                                                         <input id="password" class="form-control" type="password"
-                                                            name="password" placeholder="{{ __('trans.password_placeholder') }}"
+                                                            name="password"
+                                                            placeholder="{{ __('trans.password_placeholder') }}"
                                                             autocomplete="new-password" required autofocus />
                                                         {{-- <x-input-error :messages="$errors->get('password')" class="mt-2" /> --}}
                                                     </div>
@@ -294,7 +303,8 @@
                                                         <input id="password_confirmation" class="form-control"
                                                             type="password" name="password_confirmation"
                                                             autocomplete="new-password"
-                                                            placeholder="{{ __('trans.confirm_password_placeholder') }}" required autofocus />
+                                                            placeholder="{{ __('trans.confirm_password_placeholder') }}"
+                                                            required autofocus />
                                                         {{-- <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" /> --}}
                                                     </div>
                                                 </div>
