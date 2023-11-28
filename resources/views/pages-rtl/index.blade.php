@@ -9,8 +9,11 @@
         @vite(['resources/scss/light/assets/apps/blog-post.scss'])
         @vite(['resources/scss/dark/assets/apps/blog-post.scss'])
 
-        @vite(['resources/rtl/scss/light/assets/components/modal.scss'])
-        @vite(['resources/rtl/scss/dark/assets/components/modal.scss'])
+        {{-- @vite(['resources/rtl/scss/light/assets/components/modal.scss']) --}}
+        {{-- @vite(['resources/rtl/scss/dark/assets/components/modal.scss']) --}}
+        @vite(['resources/scss/light/assets/components/modal.scss'])
+        @vite(['resources/scss/dark/assets/components/modal.scss'])
+
         @vite(['public/plugins-rtl/filepond/filepond.min.css'])
         @vite(['public/plugins-rtl/filepond/FilePondPluginImagePreview.min.css'])
         @vite(['public/plugins-rtl/tagify/tagify.css'])
