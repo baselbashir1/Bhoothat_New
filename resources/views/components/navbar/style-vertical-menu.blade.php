@@ -89,8 +89,7 @@
                 <li class="nav-item theme-toggle-item theme-auth-new">
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        {{-- <x-dropdown-link :href="route('logout')" --}}
-                        <a :href="route('logout')"
+                        <x-dropdown-link :href="route('logout')"
                             onclick="event.preventDefault();
                                             this.closest('form').submit();">
                             {{ __('trans.logout') }}
@@ -103,8 +102,7 @@
                                 <path d="M15 12h-12l3 -3"></path>
                                 <path d="M6 15l-3 -3"></path>
                             </svg>
-                        </a>
-                        {{-- </x-dropdown-link> --}}
+                        </x-dropdown-link>
                     </form>
                 </li>
             @else

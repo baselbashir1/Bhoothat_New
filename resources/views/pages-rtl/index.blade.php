@@ -9,8 +9,8 @@
         @vite(['resources/scss/light/assets/apps/blog-post.scss'])
         @vite(['resources/scss/dark/assets/apps/blog-post.scss'])
 
-        {{-- @vite(['resources/rtl/scss/light/assets/components/modal.scss']) --}}
-        {{-- @vite(['resources/rtl/scss/dark/assets/components/modal.scss']) --}}
+        @vite(['resources/rtl/scss/light/assets/components/modal.scss'])
+        @vite(['resources/rtl/scss/dark/assets/components/modal.scss'])
         @vite(['resources/scss/light/assets/components/modal.scss'])
         @vite(['resources/scss/dark/assets/components/modal.scss'])
 
@@ -122,8 +122,8 @@
                                                         {{-- <x-text-input id="email" class="form-control" type="email"
                                                             name="email" :value="old('email')" autocomplete="email"
                                                             placeholder="Enter your email address" required autofocus /> --}}
-                                                        <input id="email" class="form-control" type="email"
-                                                            name="email" value="{{ old('email') }}"
+                                                        <input id="email" class="form-control text-right"
+                                                            type="email" name="email" value="{{ old('email') }}"
                                                             autocomplete="email"
                                                             placeholder="{{ __('trans.email_placeholder') }}" required
                                                             autofocus />
@@ -253,9 +253,9 @@
                                                             autocomplete="email"
                                                             placeholder="Enter your email address" required
                                                             autofocus /> --}}
-                                                        <input id="email" class="form-control" type="email"
-                                                            name="email" value="{{ old('email') }}"
-                                                            autocomplete="email"
+                                                        <input id="email" class="form-control text-right"
+                                                            type="email" name="email"
+                                                            value="{{ old('email') }}" autocomplete="email"
                                                             placeholder="{{ __('trans.email_placeholder') }}" required
                                                             autofocus />
                                                         {{-- <x-input-error :messages="$errors->get('email')" class="mt-2" /> --}}
