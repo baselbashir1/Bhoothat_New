@@ -61,16 +61,13 @@
                     <div class="featured-image-overlay"></div>
                     <div class="post-header">
                         <div class="post-title">
-                            <h1 class="mb-0 font-bg">Our website offers comprehensive educational services, granting
-                                easy
-                                access to a wealth of resources and learning opportunities. Request the research paper
-                                now to explore these valuable resources.</h1>
+                            <h1 class="mb-0 font-bg">{{ __('trans.main_content') }}</h1>
                         </div>
                         @auth
                             <div class="post-meta-info d-flex justify-content-between">
                                 <a href="/request-research" class="btn btn-warning m-auto w-auto mb-5"
                                     style="font-size: 18px; border-radius: 20px">
-                                    <span class="font-bg-btn">Request from here</span>
+                                    <span class="font-bg-btn">{{ __('trans.request_btn') }}</span>
                                 </a>
                             </div>
                         @else
@@ -78,7 +75,7 @@
                                 <button class="btn btn-warning m-auto w-auto mb-5"
                                     style="font-size: 18px; border-radius: 20px" data-bs-toggle="modal"
                                     data-bs-target="#loginModal">
-                                    <span class="font-bg-btn">Request from here</span>
+                                    <span class="font-bg-btn">{{ __('trans.request_btn') }}</span>
                                 </button>
                                 <div class="modal fade inputForm-modal" id="loginModal" tabindex="-1" role="dialog"
                                     aria-labelledby="inputFormModalLabel" aria-hidden="true">
@@ -348,15 +345,15 @@
 
     <div class="mr-4 ml-4">
         <div class="row">
-            <h4 class="text-center mt-4 mb-4"><b>Samples</b></h4>
+            <h4 class="text-center mt-4 mb-4"><b>{{ __('trans.samples') }}</b></h4>
             @for ($i = 1; $i <= 4; $i++)
                 <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-4">
                     <a href="./app-blog-post.html" class="card style-2 mb-md-0 mb-4">
                         <img src="{{ Vite::asset('resources/images/p2w.png') }}" class="card-img-top"
                             alt="...">
                         <div class="card-body px-0 pb-0 text-center">
-                            <h5 class="card-title mb-3 font-bg">Convert PDF files to Word.</h5>
-                            <button class="btn btn-secondary font-bg-btn">Read</button>
+                            <h5 class="card-title mb-3 font-bg">{{ __('trans.p2w') }}</h5>
+                            <button class="btn btn-secondary font-bg-btn">{{ __('trans.read') }}</button>
                         </div>
                     </a>
                 </div>

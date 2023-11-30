@@ -148,18 +148,18 @@
                         <a rel="alternate" hreflang="{{ $localeCode }}"
                             href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
 
-                            @if (LaravelLocalization::getCurrentLocale() == 'ar')
+                            {{-- @if (LaravelLocalization::getCurrentLocale() == 'ar')
                                 <img src="{{ Vite::asset('resources/images/1x1/uae.png') }}" class="flag-width"
                                     alt="flag">
                             @else
                                 <img src="{{ Vite::asset('resources/images/1x1/us.svg') }}" class="flag-width"
                                     alt="flag">
-                            @endif
+                            @endif --}}
 
-                            {{ $properties['native'] }}
-                            <span class="align-self-center">
+                                {{ $properties['native'] }}
+                            {{-- <span class="align-self-center">
                                 &nbsp;{{ $localeCode == LaravelLocalization::getCurrentLocale() ? 'active' : '' }}
-                            </span>
+                            </span> --}}
                         </a>
                         {{-- <a class="dropdown-item d-flex" href="javascript:void(0);"><img
                                 src="{{ Vite::asset('public/src/assets/img/1x1/us.svg') }}" class="flag-width"

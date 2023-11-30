@@ -25,4 +25,11 @@ return [
     'agree' => 'I agree the',
     'terms_conditions' => 'Terms and Conditions',
 
+    'main_content' => 'Our website offers comprehensive educational services, granting easy access to a wealth of resources and learning opportunities. Request the research paper now to explore these valuable resources.',
+    'request_btn' => 'Request from here',
+    'samples' => 'Samples of researches',
+
+    'read' => 'Read',
+    'p2w' => 'Convert PDF files to Word',
+
 ];
