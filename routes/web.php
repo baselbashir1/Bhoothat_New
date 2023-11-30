@@ -29,7 +29,8 @@ Route::group(
             // Route::get('/index', function () {
             //     return view('pages.index');
             // });
-            Route::get('/index', [HomeController::class, 'index']);
+            Route::get('/', [HomeController::class, 'index']);
+            Route::get('/request-research', [HomeController::class, 'requestResearch']);
             Route::get('/clear', [HomeController::class, 'clear']);
 
             Route::middleware(['auth'])->group(function () {

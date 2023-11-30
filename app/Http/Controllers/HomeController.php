@@ -26,4 +26,10 @@ class HomeController extends Controller
         Artisan::call('view:clear');
         return 'cleared';
     }
+
+    public function requestResearch()
+    {
+        if (app()->getLocale() == 'en') return view('pages.request-research', ['title' => __('trans.bhoothat')]);
+        // if (app()->getLocale() == 'ar') return view('pages-rtl.index', ['title' => __('trans.bhoothat')]);
+    }
 }
