@@ -19,28 +19,35 @@ class RequestResearchController extends Controller
 
     public function storeRequestResearch(Request $request)
     {
-        $formFields = $request->validate([
-            'phone' => 'required',
-            'education_level' => 'required',
-            'research_topic' => 'required',
-            'teacher_name' => 'nullable',
-            'notes' => 'nullable'
-        ]);
-
         try {
-            ResearchRequest::create([
+            $formFields = $request->validate([
+                'phone' => 'required',
+                'education_level' => 'required',
+                'research_topic' => 'required',
+                'teacher_name' => 'nullable',
+                'notes' => 'nullable'
+            ]);
+
+            $userId = auth()->user()->id;
+
+            $researchRequest = ResearchRequest::create([
                 'phone' => $formFields['phone'],
                 'education_level' => $formFields['education_level'],
                 'research_topic' => $formFields['research_topic'],
                 'teacher_name' => $formFields['teacher_name'],
-                'notes' => $formFields['notes']
+                'notes' => $formFields['notes'],
+                'user_id' => $userId,
             ]);
 
-            if (app()->getLocale() == 'en') return redirect()->back()->with('success', __('trans.msg_request_success'));
-            if (app()->getLocale() == 'ar') return redirect()->back()->with('success', __('trans.msg_request_success'));
+            $locale = app()->getLocale();
+            $messageKey = $researchRequest ? 'msg_request_success' : 'msg_request_error';
+            $messageType = $researchRequest ? 'success' : 'error';
+
+            if ($locale == "en") return redirect('/request-research')->with($messageType, __('trans.' . $messageKey));
+            if ($locale == "ar") return redirect('/rtl/request-research')->with($messageType, __('trans.' . $messageKey));
         } catch (\Exception $e) {
-            if (app()->getLocale() == 'en') return redirect()->back()->withErrors('error', __('trans.msg_request_error'));
-            if (app()->getLocale() == 'ar') return redirect()->back()->withErrors('error', __('trans.msg_request_error'));
+            $locale = app()->getLocale();
+            return redirect()->back()->withErrors('error', __('trans.msg_request_error'));
         }
     }
 

@@ -38,7 +38,9 @@
 
         @if (session('success'))
             <div class="alert alert-success text-center" style="font-size: 20px">
-                {{ session('success') }}
+                {{-- {{ session('success') }} --}}
+                {{-- {{ __('trans.msg_request_success') }} --}}
+                شسيسيشس
             </div>
         @endif
 
