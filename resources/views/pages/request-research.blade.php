@@ -93,7 +93,8 @@
                 </div>
             </div> --}}
             <div class="col-12">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <a href="/" class="btn btn-primary m-1">Back</a>
+                <button type="submit" class="btn btn-success m-1">Submit</button>
             </div>
         </form>
     </div>
