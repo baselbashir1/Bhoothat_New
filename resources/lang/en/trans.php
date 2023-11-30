@@ -32,4 +32,6 @@ return [
     'read' => 'Read',
     'p2w' => 'Convert PDF files to Word',
 
+    'rights' => 'All rights reserved',
+
 ];
