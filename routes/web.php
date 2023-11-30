@@ -1,11 +1,14 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RequestResearchController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServiceImageController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+
+use function Ramsey\Uuid\v1;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,23 +29,32 @@ Route::group(
     function () {
         Route::prefix('')->group(function () {
 
-            // Route::get('/index', function () {
-            //     return view('pages.index');
-            // });
             Route::get('/', [HomeController::class, 'index']);
-            Route::get('/request-research', [HomeController::class, 'requestResearch']);
+            Route::get('/rtl/', [HomeController::class, 'index']);
+            // Route::get('/request-research', [RequestResearchController::class, 'requestResearch']);
+            // Route::get('/rtl/request-research', [RequestResearchController::class, 'requestResearch']);
             Route::get('/clear', [HomeController::class, 'clear']);
 
             Route::middleware(['auth'])->group(function () {
                 Route::controller(ServiceController::class)->group(function () {
-                    Route::get('/dashboard', 'index');
-                    Route::get('/services', 'services');
-                    Route::get('/detail/{service}', 'show');
-                    Route::get('/add', 'create');
-                    Route::post('/add-service', 'store');
-                    Route::get('/edit/{service}', 'edit');
-                    Route::post('/edit-service/{service}', 'update');
-                    Route::post('/delete/{service}', 'destroy');
+
+                    Route::get('/request-research', [RequestResearchController::class, 'requestResearch']);
+                    Route::get('/rtl/request-research', [RequestResearchController::class, 'requestResearch']);
+
+                    Route::post('/add-request-research', [RequestResearchController::class, 'storeRequestResearch']);
+
+                    Route::get('/download/{file}', [RequestResearchController::class, 'download'])->name('download');
+                    // Route::get('/rtl/add-request-research', [RequestResearchController::class, 'storeRequestResearch']);
+
+
+                    // Route::get('/dashboard', 'index');
+                    // Route::get('/services', 'services');
+                    // Route::get('/detail/{service}', 'show');
+                    // Route::get('/add', 'create');
+                    // Route::post('/add-service', 'store');
+                    // Route::get('/edit/{service}', 'edit');
+                    // Route::post('/edit-service/{service}', 'update');
+                    // Route::post('/delete/{service}', 'destroy');
                 });
                 Route::controller(ServiceImageController::class)->group(function () {
                     Route::post('/detail/{service}/add-service-image', 'addImageService');

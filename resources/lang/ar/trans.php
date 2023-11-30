@@ -34,4 +34,22 @@ return [
 
     'rights' => 'جميع الحقوق محفوطة لدى',
 
+    'request_research_now' => 'اطلب بحثك الان',
+    'phone' => 'رقم الهاتف',
+    'education_level' => 'المستوى الدراسي',
+    'choose' => 'اختر المستوى الدراسي',
+    'research_topic' => 'عنوان البحث',
+    'teacher_name' => 'اسم المعلم/ة',
+    'notes' => 'ملاحظات',
+    'back' => 'رجوع',
+    'submit' => 'اعتماد',
+
+    'phone_placeholder' => 'ادخل رقم الهاتف',
+    'research_topic_placeholder' => 'ادخل عنوان البحث',
+    'teacher_name_placeholder' => 'ادخل اسم المعلم/ة',
+    'notes_placeholder' => 'اكتب ملاحظاتك او تفاصيل عن موضوع البحث',
+
+    'msg_request_success' => 'تم ارسال الطلب بنجاح',
+    'msg_request_error' => 'حدث خطأ، فم باعادة المحاولة',
+
 ];

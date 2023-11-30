@@ -354,6 +354,8 @@
                         <div class="card-body px-0 pb-0 text-center">
                             <h5 class="card-title mb-3 font-bg">{{ __('trans.p2w') }}</h5>
                             <button class="btn btn-secondary font-bg-btn">{{ __('trans.read') }}</button>
+                            {{-- <a href="{{ route('download', ['file' => $fileName]) }}">Download PDF</a> --}}
+                            {{-- <a href="{{ route('download', ['file' => 'test.pdf']) }}">Download PDF</a> --}}
                         </div>
                     </a>
                 </div>

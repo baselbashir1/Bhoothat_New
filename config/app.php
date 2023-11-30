@@ -196,6 +196,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
 
+        Mckenziearts\Notify\LaravelNotifyServiceProvider::class
+
     ],
 
     /*

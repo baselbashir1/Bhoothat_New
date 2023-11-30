@@ -34,4 +34,23 @@ return [
 
     'rights' => 'All rights reserved',
 
+    'request_research_now' => 'Request your research now',
+    'phone' => 'Phone',
+    'education_level' => 'Education Level',
+    'choose' => 'Choose education level',
+    'research_topic' => 'Research Topic',
+    'teacher_name' => 'Teacher Name',
+    'notes' => 'Notes',
+    'back' => 'Back',
+    'submit' => 'Submit',
+
+    'phone_placeholder' => 'Enter your phone number',
+    'research_topic_placeholder' => 'Enter the subject of your research',
+    'teacher_name_placeholder' => 'Enter the teacher name',
+    'notes_placeholder' => 'Write your notes and details for your research',
+
+    'msg_request_success' => 'Request sent successfully',
+    'msg_request_error' => 'Request failed, try again',
+
+
 ];

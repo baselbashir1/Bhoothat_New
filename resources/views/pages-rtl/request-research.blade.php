@@ -1,4 +1,4 @@
-<x-base-layout :scrollspy="false">
+<x-rtl.base-layout :scrollspy="false">
 
     <x-slot:pageTitle>{{ $title }}</x-slot>
 
@@ -66,7 +66,7 @@
                 <label for="education_level" class="form-label">{{ __('trans.education_level') }}</label>
                 <select name="education_level" class="form-select">
                     <option selected disabled>{{ __('trans.choose') }}</option>
-                    @foreach ($educationLevelEnglish as $educationLevel)
+                    @foreach ($educationLevelArabic as $educationLevel)
                         <option value="{{ $educationLevel }}">{{ $educationLevel }}</option>
                     @endforeach
                 </select>
@@ -110,4 +110,4 @@
 
     <x-slot:footerFiles></x-slot>
 
-</x-base-layout>
+</x-rtl.base-layout>

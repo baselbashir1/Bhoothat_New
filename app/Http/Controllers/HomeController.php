@@ -9,12 +9,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // $services = Service::all();
-
-        // if (app()->getLocale() == 'en') return view('pages.app.ecommerce.shop', ['title' => 'Dashboard'], ['services' => $services]);
-        // if (app()->getLocale() == 'ar') return view('pages-rtl.app.ecommerce.shop', ['title' => 'Dashboard'], ['services' => $services]);
-
-
         if (app()->getLocale() == 'en') return view('pages.index', ['title' => __('trans.bhoothat')]);
         if (app()->getLocale() == 'ar') return view('pages-rtl.index', ['title' => __('trans.bhoothat')]);
     }

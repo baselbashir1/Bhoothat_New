@@ -53,6 +53,8 @@
     @vite(['resources/layouts/vertical-light-menu/loader.js'])
     @vite(['resources/scss/light/plugins/plugins.min.scss'])
 
+    {{-- @notifyCss --}}
+
     <style>
         /* .scrollbar {
             -ms-overflow-style: none;
@@ -181,6 +183,9 @@
     @vite(['public/plugins/editors/quill/quill.js'])
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     {{-- @vite(['resources/assets/js/scrollspyNav.js']) --}}
+
+    {{-- <x-notify::notify />
+    @notifyJs --}}
 
     {{ $footerFiles }}
 

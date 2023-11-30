@@ -42,8 +42,8 @@ class UserController extends Controller
         if (auth()->attempt($formFields)) {
             $request->session()->regenerate();
 
-            if (app()->getLocale() == 'en') return redirect('/en/request-research');
-            if (app()->getLocale() == 'ar') return redirect('/ar/request-research');
+            if (app()->getLocale() == 'en') return redirect('/request-research');
+            if (app()->getLocale() == 'ar') return redirect('/rtl/request-research');
         }
 
         return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');
