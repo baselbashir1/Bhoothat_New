@@ -19,22 +19,30 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->create([
-            'name' => 'Basel Bashir',
-            'email' => 'basel@gmail.com',
-            'password' => bcrypt('12345678')
-        ]);
+        User::factory()->create();
 
         $educationLevelEnglish = EducationLevelEnglish::getEducationLevelEnglish();
         $educationLevelArabic = EducationLevelArabic::getEducationLevelArabic();
 
-        foreach ($educationLevelEnglish as $en) {
-            foreach ($educationLevelArabic as $ar) {
-                EducationLevel::create([
-                    'name_en' => $en,
-                    'name_ar' => $ar
-                ]);
-            }
+        for ($i = 0, $j = 0; $i < 3, $j < 3; $i++, $j++) {
+            EducationLevel::create([
+                'name_en' => $i,
+                'name_ar' => $j
+            ]);
         }
+
+        // foreach ([$educationLevelEnglish, $educationLevelArabic] as $val) {
+        //     EducationLevel::create([
+        //         'name_en' => $val[0],
+        //         'name_ar' => $val[1]
+        //     ]);
+        // }
+
+        // foreach ($educationLevelEnglish as $en) {
+        //     EducationLevel::create([
+        //         'name_en' => $en,
+        //         'name_ar' => $en
+        //     ]);
+        // }
     }
 }
