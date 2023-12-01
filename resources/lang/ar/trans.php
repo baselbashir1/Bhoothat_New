@@ -54,6 +54,11 @@ return [
 
     'phone_required' => 'رقم الهاتف مطلوب',
     'education_level_required' => 'المستوى الدراسي مطلوب',
-    'research_topic_required' => 'عنوان البحث مطلوب'
+    'research_topic_required' => 'عنوان البحث مطلوب',
+
+    'sample_nature' => 'الطبيعة',
+    'sample_mechanical' => 'الهندسة الميكانيكية',
+    'sample_pollution' => 'تلوث المناخ',
+    'sample_medicine' => 'الطب'
 
 ];

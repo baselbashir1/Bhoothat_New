@@ -346,20 +346,59 @@
     <div class="mr-4 ml-4">
         <div class="row">
             <h4 class="text-center mt-4 mb-4"><b>{{ __('trans.samples') }}</b></h4>
-            @for ($i = 1; $i <= 4; $i++)
+
                 <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-4">
                     <a href="./app-blog-post.html" class="card style-2 mb-md-0 mb-4">
-                        <img src="{{ Vite::asset('resources/images/p2w.png') }}" class="card-img-top"
-                            alt="...">
+                        <img src="{{ Vite::asset('resources/images/samples/1.jpeg') }}" class="card-img-top"
+                            alt="..." style="height: 210px">
                         <div class="card-body px-0 pb-0 text-center">
-                            <h5 class="card-title mb-3 font-bg">{{ __('trans.p2w') }}</h5>
+                            <h5 class="card-title mb-3 font-bg">{{ __('trans.sample_nature') }}</h5>
                             <button class="btn btn-secondary font-bg-btn">{{ __('trans.read') }}</button>
                             {{-- <a href="{{ route('download', ['file' => $fileName]) }}">Download PDF</a> --}}
                             {{-- <a href="{{ route('download', ['file' => 'test.pdf']) }}">Download PDF</a> --}}
                         </div>
                     </a>
                 </div>
-            @endfor
+
+                <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <a href="./app-blog-post.html" class="card style-2 mb-md-0 mb-4">
+                        <img src="{{ Vite::asset('resources/images/samples/2.jpeg') }}" class="card-img-top"
+                            alt="..." style="height: 210px">
+                        <div class="card-body px-0 pb-0 text-center">
+                            <h5 class="card-title mb-3 font-bg">{{ __('trans.sample_mechanical') }}</h5>
+                            <button class="btn btn-secondary font-bg-btn">{{ __('trans.read') }}</button>
+                            {{-- <a href="{{ route('download', ['file' => $fileName]) }}">Download PDF</a> --}}
+                            {{-- <a href="{{ route('download', ['file' => 'test.pdf']) }}">Download PDF</a> --}}
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <a href="./app-blog-post.html" class="card style-2 mb-md-0 mb-4">
+                        <img src="{{ Vite::asset('resources/images/samples/3.jpeg') }}" class="card-img-top"
+                            alt="..." style="height: 210px">
+                        <div class="card-body px-0 pb-0 text-center">
+                            <h5 class="card-title mb-3 font-bg">{{ __('trans.sample_pollution') }}</h5>
+                            <button class="btn btn-secondary font-bg-btn">{{ __('trans.read') }}</button>
+                            {{-- <a href="{{ route('download', ['file' => $fileName]) }}">Download PDF</a> --}}
+                            {{-- <a href="{{ route('download', ['file' => 'test.pdf']) }}">Download PDF</a> --}}
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <a href="./app-blog-post.html" class="card style-2 mb-md-0 mb-4">
+                        <img src="{{ Vite::asset('resources/images/samples/4.jpeg') }}" class="card-img-top"
+                            alt="..." style="height: 210px">
+                        <div class="card-body px-0 pb-0 text-center">
+                            <h5 class="card-title mb-3 font-bg">{{ __('trans.sample_medicine') }}</h5>
+                            <button class="btn btn-secondary font-bg-btn">{{ __('trans.read') }}</button>
+                            {{-- <a href="{{ route('download', ['file' => $fileName]) }}">Download PDF</a> --}}
+                            {{-- <a href="{{ route('download', ['file' => 'test.pdf']) }}">Download PDF</a> --}}
+                        </div>
+                    </a>
+                </div>
+
         </div>
     </div>
 
