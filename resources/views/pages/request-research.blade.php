@@ -34,10 +34,10 @@
 
     </x-slot>
 
-    <div class="container" style="margin-top: 100px">
+    <div class="container">
 
         @if (session('success'))
-            <div class="alert alert-success text-center" style="font-size: 20px">
+            <div class="alert alert-success text-center" style="font-size: 20px; margin-top: 75px">
                 {{ session('success') }}
             </div>
         @endif
@@ -60,8 +60,8 @@
                 <label for="education_level" class="form-label">{{ __('trans.education_level') }}</label>
                 <select name="education_level" class="form-select">
                     <option selected disabled>{{ __('trans.choose') }}</option>
-                    @foreach ($educationLevelEnglish as $educationLevel)
-                        <option value="{{ $educationLevel }}">{{ $educationLevel }}</option>
+                    @foreach ($educationLevels as $educationLevel)
+                        <option value="{{ $educationLevel->id }}">{{ $educationLevel->name_en }}</option>
                     @endforeach
                 </select>
                 @error('education_level')

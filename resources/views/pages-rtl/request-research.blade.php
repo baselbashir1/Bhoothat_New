@@ -34,11 +34,12 @@
 
     </x-slot>
 
-    <div class="container" style="margin-top: 100px">
+    <div class="container">
 
         @if (session('success'))
-            <div class="alert alert-success text-center" style="font-size: 20px">
-                {{ session('success') }}
+            <div class="alert alert-success text-center" style="font-size: 20px; margin-top: 75px">
+                {{-- {{ session('success') }} --}}
+                {{ __('trans.msg_request_success') }}
             </div>
         @endif
 
@@ -52,7 +53,7 @@
                 <input type="text" name="phone" class="form-control"
                     placeholder="{{ __('trans.phone_placeholder') }}">
                 @error('phone')
-                    <p class="mt-2 text-red-600" style="color: red">{{ $message }}</p>
+                    <p class="mt-2 text-red-600" style="color: red">{{ __('trans.phone_required') }}</p>
                 @enderror
             </div>
 
@@ -60,12 +61,12 @@
                 <label for="education_level" class="form-label">{{ __('trans.education_level') }}</label>
                 <select name="education_level" class="form-select">
                     <option selected disabled>{{ __('trans.choose') }}</option>
-                    @foreach ($educationLevelArabic as $educationLevel)
-                        <option value="{{ $educationLevel }}">{{ $educationLevel }}</option>
+                    @foreach ($educationLevels as $educationLevel)
+                        <option value="{{ $educationLevel->id }}">{{ $educationLevel->name_ar }}</option>
                     @endforeach
                 </select>
                 @error('education_level')
-                    <p class="mt-2 text-red-600" style="color: red">{{ $message }}</p>
+                    <p class="mt-2 text-red-600" style="color: red">{{ __('trans.education_level_required') }}</p>
                 @enderror
             </div>
 
@@ -74,7 +75,7 @@
                 <input type="text" class="form-control" name="research_topic"
                     placeholder="{{ __('trans.research_topic_placeholder') }}">
                 @error('research_topic')
-                    <p class="mt-2 text-red-600" style="color: red">{{ $message }}</p>
+                    <p class="mt-2 text-red-600" style="color: red">{{ __('trans.research_topic_required') }}</p>
                 @enderror
             </div>
 

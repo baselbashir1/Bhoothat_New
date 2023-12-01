@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Enums\EducationLevelArabic;
 use App\Http\Enums\EducationLevelEnglish;
+use App\Models\EducationLevel;
 use App\Models\ResearchRequest;
 use Illuminate\Http\Request;
 
@@ -11,10 +12,10 @@ class RequestResearchController extends Controller
 {
     public function requestResearch()
     {
-        $educationLevelEnglish = EducationLevelEnglish::getEducationLevelEnglish();
-        $educationLevelArabic = EducationLevelArabic::getEducationLevelArabic();
-        if (app()->getLocale() == 'en') return view('pages.request-research', ['title' => __('trans.bhoothat')], ['educationLevelEnglish' => $educationLevelEnglish]);
-        if (app()->getLocale() == 'ar') return view('pages-rtl.request-research', ['title' => __('trans.bhoothat')], ['educationLevelArabic' => $educationLevelArabic]);
+        $educationLevels = EducationLevel::all();
+
+        if (app()->getLocale() == 'en') return view('pages.request-research', ['title' => __('trans.bhoothat')], ['educationLevels' => $educationLevels]);
+        if (app()->getLocale() == 'ar') return view('pages-rtl.request-research', ['title' => __('trans.bhoothat')], ['educationLevels' => $educationLevels]);
     }
 
     public function storeRequestResearch(Request $request)
@@ -36,7 +37,7 @@ class RequestResearchController extends Controller
 
             ResearchRequest::create([
                 'phone' => $formFields['phone'],
-                'education_level' => $formFields['education_level'],
+                'education_level_id' => $formFields['education_level'],
                 'research_topic' => $formFields['research_topic'],
                 'teacher_name' => $formFields['teacher_name'],
                 'notes' => $formFields['notes'],
