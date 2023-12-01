@@ -26,28 +26,26 @@ class RequestResearchController extends Controller
                 'research_topic' => 'required',
                 'teacher_name' => 'nullable',
                 'notes' => 'nullable'
+            ], [
+                'phone.required' => __('trans.phone_required'),
+                'education_level.required' => __('trans.education_level_required'),
+                'research_topic.required' => __('trans.research_topic_required')
             ]);
 
             $userId = auth()->user()->id;
 
-            $researchRequest = ResearchRequest::create([
+            ResearchRequest::create([
                 'phone' => $formFields['phone'],
                 'education_level' => $formFields['education_level'],
                 'research_topic' => $formFields['research_topic'],
                 'teacher_name' => $formFields['teacher_name'],
                 'notes' => $formFields['notes'],
-                'user_id' => $userId,
+                'user_id' => $userId
             ]);
 
-            $locale = app()->getLocale();
-            $messageKey = $researchRequest ? 'msg_request_success' : 'msg_request_error';
-            $messageType = $researchRequest ? 'success' : 'error';
-
-            if ($locale == "en") return redirect('/request-research')->with($messageType, __('trans.' . $messageKey));
-            if ($locale == "ar") return redirect('/rtl/request-research')->with($messageType, __('trans.' . $messageKey));
+            return redirect()->back()->with('success', __('trans.msg_request_success'));
         } catch (\Exception $e) {
-            $locale = app()->getLocale();
-            return redirect()->back()->withErrors('error', __('trans.msg_request_error'));
+            throw $e;
         }
     }
 

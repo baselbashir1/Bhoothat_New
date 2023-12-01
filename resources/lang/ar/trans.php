@@ -50,6 +50,10 @@ return [
     'notes_placeholder' => 'اكتب ملاحظاتك او تفاصيل عن موضوع البحث',
 
     'msg_request_success' => 'تم ارسال الطلب بنجاح',
-    'msg_request_error' => 'حدث خطأ، فم باعادة المحاولة',
+    'msg_request_error' => 'حدث خطأ، قم باعادة المحاولة',
+
+    'phone_required' => 'رقم الهاتف مطلوب',
+    'education_level_required' => 'المستوى الدراسي مطلوب',
+    'research_topic_required' => 'عنوان البحث مطلوب'
 
 ];

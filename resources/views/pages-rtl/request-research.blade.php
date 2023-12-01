@@ -42,12 +42,6 @@
             </div>
         @endif
 
-        @if (session('error'))
-            <div class="alert alert-danger text-center" style="font-size: 20px">
-                {{ session('error') }}
-            </div>
-        @endif
-
         <h2 class="text-center" style="margin-bottom: 50px; margin-top: 50px">
             <b>{{ __('trans.request_research_now') }}</b>
         </h2>

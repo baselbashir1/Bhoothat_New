@@ -10,11 +10,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class ResearchRequest extends Model
 {
     use HasFactory;
-    public $table = "research_requests";
-    public $fillable = ['phone', 'education_level', 'research_topic', 'teacher_name', 'notes', 'user_id'];
+    public $table = 'research_requests';
+    public $fillable = ['phone', 'education_level_id', 'research_topic', 'teacher_name', 'notes', 'user_id'];
 
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function educationLevel(): BelongsTo
+    {
+        return $this->belongsTo(EducationLevel::class);
     }
 }
