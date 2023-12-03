@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -39,7 +40,7 @@ class UserController extends Controller
             'password' => 'required'
         ]);
 
-        if (auth()->attempt($formFields)) {
+        if (Auth::guard('web')->attempt($formFields)) {
             $request->session()->regenerate();
 
             if (app()->getLocale() == 'en') return redirect('/request-research');
@@ -51,7 +52,7 @@ class UserController extends Controller
 
     public function logout(Request $request)
     {
-        auth()->logout();
+        Auth::guard('web')->logout();
 
         $request->session()->invalidate();
         $request->session()->regenerateToken();
