@@ -43,10 +43,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function services()
-    {
-        return $this->hasMany(Service::class, 'user_id');
-    }
+    // public function services()
+    // {
+    //     return $this->hasMany(Service::class, 'user_id');
+    // }
 
     public function requestedResearches(): HasMany
     {
